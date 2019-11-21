@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sword And Shield Exp Candy Calculator</title>
+
+    <script type="text/javascript">
+      function calculate(expRate, currExp, desiredLevel) {
+        //alert("Parameters: " + expRate + " " + currExp + " " + desiredLevel);
+
+        var expNeeded;
+
+        // if erratic
+
+        // if fast
+
+        // if medium fast
+        if (expRate === "MediumFast") {
+          expNeeded = desiredLevel ** 3;
+        }
+
+        if (expRate === "MediumSlow") {
+          expNeeded = (6 / 5) * (desiredLevel ** 3) - 15 * (desiredLevel ** 2) + 100 * desiredLevel - 140;
+          //alert(expNeeded);
+        }
+
+        // if slow
+        
+
+        // if fluctuating
+
+
+        var xs = expNeeded / 100;
+        xs = Math.ceil(xs);
+        //alert(xs);
+        document.getElementById("XS").innerText = xs;
+
+        var s = expNeeded / 800;
+        s = Math.ceil(s);
+        document.getElementById("S").innerText = s;
+
+        var m = expNeeded / 3000;
+        m = Math.ceil(m);
+        document.getElementById("M").innerText = m;
+
+        var l = expNeeded / 10000;
+        l = Math.ceil(l);
+        document.getElementById("L").innerText = l;
+
+        var xl = expNeeded / 30000;
+        xl = Math.ceil(xl);
+        document.getElementById("XL").innerText = xl;
+
+      }
+     </script>
+
+     <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+     </style>
+
+  </head>
+  <body>
+
+    <form action="javascript:calculate(expRate.value, currExp.value, desiredLevel.value)">
+      <select id="expRate">
+        <option value="MediumSlow">Grookey, Thwackey, Rillaboom</option>
+        <option value="MediumSlow">Scorbunny, Raboot, Cinderace</option>
+        <option value="MediumSlow">Sobble, Drizzile, Inteleon</option>
+        <option value="MediumFast">Blipbug, Dottler, Orbeetle</option>
+        <option value="MediumFast">Caterpie, Metapod, Butterfree</option>
+        <option value="MediumFast">Grubbin, Charjabug, Vikavolt</option>
+        <option value="MediumFast">Hoothoot, Noctowl</option>
+        
+      </select>
+
+      </br>
+
+      Current Experience Point: <input type="number" id="currExp" value="0">
+
+      </br>
+
+      Desired Level: <input type="number" min="2" max="100" id="desiredLevel" value="50">
+
+      <input type="submit" value="Calculate">
+
+    </form>
+
+    <table>
+      <tr>
+        <th>Exp. Candy</th>
+        <th># needed</th>
+      </tr>
+      <tr>
+        <td>Exp. Candy XS</td>
+        <td id="XS"></td>
+      </tr>
+      <tr>
+        <td>Exp. Candy S</td>
+        <td id="S"></td>
+      </tr>
+      <tr>
+        <td>Exp. Candy M</td>
+        <td id="M"></td>
+      </tr>
+      <tr>
+        <td>Exp. Candy L</td>
+        <td id="L"></td>
+      </tr>
+      <tr>
+        <td>Exp. Candy XL</td>
+        <td id="XL"></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
