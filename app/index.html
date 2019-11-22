@@ -44,9 +44,9 @@
         if (expRate === "Slow") {
           expNeeded = 5 * (desiredLevel ** 3) / 4;
         }
-
+        
         // if fluctuating
-        if (expNeeded === "Fluctuating") {
+        if (expRate === "Fluctuating") {
           if (desiredLevel <= 15) {
             expNeeded = (desiredLevel ** 3) * ( (Math.floor((desiredLevel+1)/3) + 24) / 50  );
           }
